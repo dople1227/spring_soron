@@ -11,15 +11,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 - 너무 많은 코드나 함수를 생성하는건 지양할 것
 - html을 구현할 땐 px고정값을 사용하는걸 지양하고 %와 vh사용으로 동적 화면 레이아웃을 구성할 것
 
-# Development Environment
-- Mariadb
-  - 129.154.53.217:32001
-  - Database: soron
-  - soronprfbs / 801eheh2
-
-- Redis
-  - 129.154.53.217:32002
-
 ## Project Overview
 
 This is a Spring Boot 3.5.4 web application built with Java 21 and Gradle. The project uses:

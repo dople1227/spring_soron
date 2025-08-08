@@ -35,3 +35,22 @@ out/
 
 ### VS Code ###
 .vscode/
+
+### Security - Never commit sensitive information ###
+.env
+.env.local
+.env.production
+application-local.properties
+**/application-local.properties
+# Allow application-prod.properties template but exclude others
+application-dev.properties
+application-staging.properties
+*.key
+*.pem
+*.p12
+secrets/
+credentials/
+
+### Logs ###
+logs/
+*.log

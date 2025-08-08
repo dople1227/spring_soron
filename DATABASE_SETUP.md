@@ -4,43 +4,6 @@
 
 Soron 프로젝트의 데이터베이스 설정 및 Sample 테이블 생성 가이드입니다.
 
-## 🗄️ 데이터베이스 정보
-
-- **DBMS**: MariaDB
-- **호스트**: 129.154.53.217:32001
-- **데이터베이스**: soron
-- **사용자**: soronprfbs
-- **비밀번호**: 801eheh2
-
-## 🚀 설정 순서
-
-### 1. 데이터베이스 초기화 (선택사항)
-
-```sql
--- src/main/resources/sql/init_database.sql 실행
-mysql -h 129.154.53.217 -P 32001 -u root -p < src/main/resources/sql/init_database.sql
-```
-
-### 2. Sample 테이블 생성
-
-```sql
--- src/main/resources/sql/sample_ddl.sql 실행
-mysql -h 129.154.53.217 -P 32001 -u soronprfbs -p soron < src/main/resources/sql/sample_ddl.sql
-```
-
-### 3. 데이터 확인
-
-```sql
--- MariaDB 클라이언트로 접속
-mysql -h 129.154.53.217 -P 32001 -u soronprfbs -p soron
-
--- 테이블 생성 확인
-SHOW TABLES;
-
--- 샘플 데이터 확인
-SELECT * FROM sample ORDER BY created_at DESC;
-```
-
 ## 📊 테이블 구조
 
 ### sample 테이블
@@ -70,9 +33,9 @@ SELECT * FROM sample ORDER BY created_at DESC;
 ```properties
 # Database Configuration
 spring.datasource.driver-class-name=org.mariadb.jdbc.Driver
-spring.datasource.url=jdbc:mariadb://129.154.53.217:32001/soron
-spring.datasource.username=soronprfbs
-spring.datasource.password=801eheh2
+spring.datasource.url=jdbc:mariadb://your_ip:your_port/soron
+spring.datasource.username=your_username
+spring.datasource.password=your_password
 
 # MyBatis Configuration
 mybatis.mapper-locations=classpath:mapper/*.xml
@@ -89,25 +52,6 @@ mybatis.configuration.map-underscore-to-camel-case=true
 3. 비활성 샘플 (INACTIVE)
 4. 긴 내용의 샘플 (ACTIVE)
 5. API 테스트 샘플 (ACTIVE)
-
-## 🔍 문제 해결
-
-### 연결 오류 시 확인사항
-
-1. **네트워크 연결 확인**
-   ```bash
-   telnet 129.154.53.217 32001
-   ```
-
-2. **데이터베이스 서버 상태 확인**
-   ```sql
-   SELECT VERSION();
-   ```
-
-3. **권한 확인**
-   ```sql
-   SHOW GRANTS FOR 'soronprfbs'@'%';
-   ```
 
 ### 테이블 재생성
 

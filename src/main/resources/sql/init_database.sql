@@ -12,8 +12,8 @@ COLLATE utf8mb4_unicode_ci;
 USE soron;
 
 -- 3. 사용자 생성 및 권한 부여 (필요한 경우)
--- CREATE USER IF NOT EXISTS 'soronprfbs'@'%' IDENTIFIED BY '801eheh2';
--- GRANT ALL PRIVILEGES ON soron.* TO 'soronprfbs'@'%';
+-- CREATE USER IF NOT EXISTS 'your_name'@'%' IDENTIFIED BY 'your_password';
+-- GRANT ALL PRIVILEGES ON soron.* TO 'your_name'@'%';
 -- FLUSH PRIVILEGES;
 
 -- 4. 시간대 설정 확인
